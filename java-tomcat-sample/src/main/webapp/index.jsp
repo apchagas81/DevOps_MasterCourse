@@ -7,6 +7,6 @@
 		<p> 	PRODUCTION MUST RECEIVE ARTIFACT FROM UAT ENVIRONMENT </p>
 		<p> 	NEW STEPS INVOLVED: NOW THE ARTIFACT YOU SENT DO STG AND THEN PRODUCTION WILL CATCH IT </p>
 		<p> 	It shoud be implemented today (2020-03-05 ) untill 10:00pm  </p>
-		<h2>=================================CHANGED================================================</h2>
+		<h2>========================================================================================</h2>
 	</body>
 </html>
