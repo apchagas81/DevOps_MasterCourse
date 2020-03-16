@@ -3,20 +3,7 @@ pipeline {
     stages {
         stage('Build Application') {
             steps {
-<<<<<<< HEAD
                 sh '/opt/app/apache-maven/bin/mvn -f java-tomcat-sample/pom.xml clean package'
-=======
-
-                sh '/opt/app/apache-maven/bin/mvn -f java-tomcat-sample/pom.xml clean package'
-
-                sh '''
-                #!/bash
-                export JAVA_HOME=/opt/app/jdk1.8.0_241
-                export MVN_HOME=/opt/app/apache-maven
-                export PATH=$JAVA_HOME/bin:$JKS_HOME:$MVN_HOME/bin:/opt/app/apache-groovy/bin:$PATH                
-                '/opt/app/apache-maven/bin/mvn -f java-tomcat-sample/pom.xml clean package'
-                '''
->>>>>>> acme-prd
             }
             post {
                 success {
