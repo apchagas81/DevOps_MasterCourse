@@ -25,7 +25,7 @@ pipeline {
 		echo "Pushing code to the acme-prd branch"
 		sh '/opt/app/git/DevOps_MasterCourse/java-tomcat-sample/push2prod.sh'
 		}	
-`	}
+	}
 
 	stage('Deploy to Production'){
             steps{
