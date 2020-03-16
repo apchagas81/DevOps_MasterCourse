@@ -3,7 +3,13 @@ pipeline {
     stages {
         stage('Build Application') {
             steps {
-                sh 'mvn -f java-tomcat-sample/pom.xml clean package'
+                sh '''
+                #!/bash
+                export JKS_HOME=/opt/app/jenkins-ci
+                export MVN_HOME=/opt/app/apache-maven
+                export PATH=$JAVA_HOME/bin:$JKS_HOME:$MVN_HOME/bin:/opt/app/apache-groovy/bin:$PATH                
+                'mvn -f java-tomcat-sample/pom.xml clean package'
+                '''
             }
             post {
                 success {
