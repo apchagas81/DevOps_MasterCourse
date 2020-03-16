@@ -1,15 +1,16 @@
-pipeline {
+node {
       agent any
       stages {
             stage('Init') {
                   steps {
-                        echo 'Hi, this is Anshul from LevelUp360'
+                        echo 'Hi, this is Andre CHAGAS from ACME-IT'
                         echo 'We are Starting the Testing'
                   }
             }
             stage('Build') {
                   steps {
                         echo 'Building Sample Maven Project'
+                        bash /opt/app/apache-maven/bin/mvn -version
                   }
             }
             stage('Deploy') {
@@ -17,7 +18,7 @@ pipeline {
                         echo "Deploying in Staging Area"
                   }
             }
-            stage('Deploy Production') {
+            stage('Deploy in Production') {
                   steps {
                         echo "Deploying in Production Area"
                   }
