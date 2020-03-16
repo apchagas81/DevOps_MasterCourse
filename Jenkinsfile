@@ -11,10 +11,9 @@ pipeline {
                   steps {
                         sh ''' 
                         #!/bin/bash
-                        export PATH=$PATH
                         echo 'Building Sample Maven Project'
                        
-                        mvn -version
+                        /opt/app/apache-maven/bin/mvn -version
                         '''
                   }
             }
