@@ -10,7 +10,7 @@ node {
             stage('Build') {
                   steps {
                         echo 'Building Sample Maven Project'
-                        bash /opt/app/apache-maven/bin/mvn -version
+                        sh /opt/app/apache-maven/bin/mvn -version
                   }
             }
             stage('Deploy') {
