@@ -5,7 +5,7 @@ pipeline {
             steps {
                 sh '''
                 #!/bash
-                'mvn -f java-tomcat-sample/pom.xml clean package'
+                '/opt/app/apache-maven/bin/mvn -f java-tomcat-sample/pom.xml clean package'
                 '''
             }
             post {
