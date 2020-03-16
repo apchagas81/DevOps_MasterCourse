@@ -10,7 +10,7 @@ pipeline {
             stage('Build') {
                   steps {
                         echo 'Building Sample Maven Project'
-                        sh /opt/app/apache-maven/bin/mvn -version
+                        bash /opt/app/apache-maven/bin/mvn -version
                   }
             }
             stage('Deploy') {
