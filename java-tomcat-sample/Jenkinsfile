@@ -5,9 +5,9 @@ pipeline {
             steps {
                 sh '''
                 #!/bash
-                export JAVA_HOME=/opt/app/jdk1.8.0_241
-                export MVN_HOME=/opt/app/apache-maven
-                export PATH=$JAVA_HOME/bin:$JKS_HOME:$MVN_HOME/bin:/opt/app/apache-groovy/bin:$PATH                
+                #export JAVA_HOME=/opt/app/jdk1.8.0_241
+                #export MVN_HOME=/opt/app/apache-maven
+                #export PATH=$JAVA_HOME/bin:$JKS_HOME:$MVN_HOME/bin:/opt/app/apache-groovy/bin:$PATH                
                 'mvn -f java-tomcat-sample/pom.xml clean package'
                 '''
             }
