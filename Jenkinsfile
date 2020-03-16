@@ -1,4 +1,4 @@
-node {
+pipeline {
       agent any
       stages {
             stage('Init') {
@@ -9,8 +9,13 @@ node {
             }
             stage('Build') {
                   steps {
+                        sh ''' 
+                        #!/bin/bash
+                        echo $USER
                         echo 'Building Sample Maven Project'
-                        bash /opt/app/apache-maven/bin/mvn -version
+                       
+                        /opt/app/apache-maven/bin/mvn -version
+                        '''
                   }
             }
             stage('Deploy') {

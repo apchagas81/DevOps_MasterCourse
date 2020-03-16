@@ -3,7 +3,16 @@ pipeline {
     stages {
         stage('Build Application') {
             steps {
+
                 sh '/opt/app/apache-maven/bin/mvn -f java-tomcat-sample/pom.xml clean package'
+
+                sh '''
+                #!/bash
+                export JAVA_HOME=/opt/app/jdk1.8.0_241
+                export MVN_HOME=/opt/app/apache-maven
+                export PATH=$JAVA_HOME/bin:$JKS_HOME:$MVN_HOME/bin:/opt/app/apache-groovy/bin:$PATH                
+                'mvn -f java-tomcat-sample/pom.xml clean package'
+                '''
             }
             post {
                 success {
@@ -14,7 +23,7 @@ pipeline {
         }
         stage('Deploy in Staging Environment'){
             steps{
-                build job: 'Deploy_Application_Staging_Env'
+                build job: '5th_SampleJob'
 
             }
             
@@ -24,7 +33,7 @@ pipeline {
                 timeout(time:5, unit:'DAYS'){
                     input message:'Approve PRODUCTION Deployment?'
                 }
-                build job: 'Deploy_Application_Prod_Env'
+                build job: '6th_SampleJob'
             }
         }
     }
