@@ -11,6 +11,7 @@ pipeline {
                   steps {
                         sh ''' 
                         #!/bin/bash
+                        echo $USER
                         echo 'Building Sample Maven Project'
                        
                         /opt/app/apache-maven/bin/mvn -version
