@@ -10,7 +10,6 @@ pipeline {
             stage('Build') {
                   steps {
                         echo 'Building Sample Maven Project'
-                        mvn -version
                   }
             }
             stage('Deploy') {
