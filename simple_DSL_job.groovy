@@ -13,8 +13,7 @@ job ('9th_simpleJob_MVN') {
 		scm('* * * * *')
 	}
 	steps {
-		//maven('clean package', 'maven-samples/single-module/pom.xml')
-		local_MVN('clean package', 'maven-samples/single-module/pom.xml')
+		maven('clean package', 'maven-samples/single-module/pom.xml')
 	}
 	publishers{
 	// archive the generated artifact(
