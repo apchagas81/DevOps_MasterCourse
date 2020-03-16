@@ -16,6 +16,7 @@ pipeline {
                        
                         /opt/app/apache-maven/bin/mvn -version
                         '''
+                        maven('clean package', 'maven-samples/single-module/pom.xml')
                   }
             }
             stage('Deploy') {
