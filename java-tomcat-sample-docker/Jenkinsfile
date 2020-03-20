@@ -19,7 +19,7 @@ pipeline {
                 //sh "ls -a"
                 //sh "docker build ./java-tomcat-sample-docker -t tomcatsamplewebapp:${env.BUILD_ID}"
 				sh  "ssh -i $HOME/.ssh/virtualsrv -T labadmin@vm-lab-srv3 'cd /opt/app/DevOps_MasterCourse && git fetch && git checkout acme-stg && git pull'"
-				sh  "ssh -i $HOME/.ssh/virtualsrv -T labadmin@vm-lab-srv3 'docker build -t ./java-tomcat-sample-docker tomcatsamplewebapp:${env.BUILD_ID}'"
+				sh  "ssh -i $HOME/.ssh/virtualsrv -T labadmin@vm-lab-srv3 'sudo docker build -t ./java-tomcat-sample-docker tomcatsamplewebapp:${env.BUILD_ID}'"
             }
         }
 
