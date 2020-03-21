@@ -3,8 +3,8 @@ FROM centos:centos7
 #MAINTAINER André Pereira César Chagas - apchagas81@gmail.com
 
 # updating centos packages and installing needed dependencies
-RUN yum update -y
-RUN yum install -y unzip wget net-tools vim git
+#RUN yum update -y
+#RUN yum install -y unzip wget net-tools vim git
 
 #Sending needed depedencies into the container
 COPY $HOME/essencials/* /tmp
