@@ -15,18 +15,11 @@ pipeline {
 
         stage('Create Tomcat Docker Image'){
             steps {
-                //sh "pwd"
-                //sh "ls -a"
-                //sh "docker build ./java-tomcat-sample-docker -t tomcatsamplewebapp:${env.BUILD_ID}"
-				sh  "ssh -i $HOME/.ssh/virtualsrv -T labadmin@vm-lab-srv3 'cd /opt/app/DevOps_MasterCourse && git fetch && git checkout acme-stg && git pull'"
-				sh  "ssh -i $HOME/.ssh/virtualsrv -T labadmin@vm-lab-srv3 'sudo docker build -t tomcatsamplewebapp:${env.BUILD_ID} /opt/app/DevOps_MasterCourse/java-tomcat-sample-docker'"
+                sh "pwd"
+                sh "ls -a"
+                sh "docker build ./java-tomcat-sample-docker -t tomcatsamplewebapp:${env.BUILD_ID}"
             }
         }
 
     }
-		post { 
-        always { 
-            cleanWs()
-			}
-		}
 }
